@@ -1,4 +1,6 @@
 # egg-compose
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/magicdawn/egg-compose.svg)](https://greenkeeper.io/)
 > compose koa middleware to an egg.js action
 
 [![Build Status](https://img.shields.io/travis/magicdawn/egg-compose.svg?style=flat-square)](https://travis-ci.org/magicdawn/egg-compose)
