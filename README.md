@@ -14,7 +14,56 @@ $ npm i egg-compose --save
 
 ## API
 ```js
-const eggCompose = require('egg-compose');
+const compose = require('egg-compose');
+```
+
+### action example
+```js
+const compose = require('egg-compose')
+
+module.exports = app => {
+  class HomeController extends app.Controller {}
+
+  Object.assign(HomeController.prototype, {
+    hello: compose([
+      async(ctx, next) => {
+        ctx.body = 'hello'
+        return next()
+      },
+      async(ctx, next) => {
+        ctx.body += ' world'
+      },
+    ])
+  })
+
+  return HomeController
+}
+```
+
+the `home.hello` will results `hello world` text
+
+### co-wechat example
+https://github.com/node-webot/co-wechat#middleware-方法变更
+
+使用 compose 包装一层即可使用
+
+```js
+const compose = require('egg-compose')
+const wechat = require('co-wechat')
+
+module.exports = app => {
+  class HomeController extends app.Controller {}
+
+  Object.assign(HomeController.prototype, {
+    wechat: compose([
+      wechat(config).middleware(async message => {
+        // blabla
+      })
+    ])
+  })
+
+  return HomeController
+}
 ```
 
 ## Changelog
