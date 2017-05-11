@@ -24,7 +24,7 @@
   "homepage": "https://github.com/magicdawn/egg-compose#readme",
   "devDependencies": {
     "co-mocha": "^1.2.0",
-    "codecov": "^1.0.1",
+    "codecov": "^2.2.0",
     "egg": "^1.3.0",
     "egg-mock": "^3.6.1",
     "eslint": "^3.10.0",
